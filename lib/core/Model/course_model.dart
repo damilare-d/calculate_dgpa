@@ -1,18 +1,17 @@
-import 'package:collection/collection.dart';
-
 class Course {
-  int id;
-  String courseName;
-  String courseCode;
-  Grade? courseGrade;
-  int courseUnit;
+  int? id;
+  String? courseName;
+  String? courseCode;
+  String? courseGrade;
+  int? courseUnit;
   int? courseScore;
 
   Course(
-      {required this.id,
-      required this.courseName,
-      required this.courseUnit,
-      required this.courseCode,
+      {this.id,
+      this.courseName,
+      this.courseUnit,
+      this.courseCode,
+      this.courseScore,
       this.courseGrade});
 
   getCourseGrade() {
@@ -31,40 +30,6 @@ class Course {
     if (courseScore! >= 0 && courseScore! <= 39) {
       return Grade.f.toString();
     }
-  }
-
-  int? totalCourseUnit = 0;
-  int? totalLoadUnit = 0;
-  List<int>? coursesUnit;
-  List<int>? coursesScore;
-  double? gradePointAverage;
-  double? cumulativeGradePointAverage;
-
-  getTotalCourseUnit() {
-    //for (int i = 0; i <= coursesUnit.length; i++) {}
-    final addedCoursesUnit = coursesUnit!.sum;
-    totalCourseUnit = totalCourseUnit! + addedCoursesUnit;
-    return totalCourseUnit;
-  }
-
-  getTotalLoadUnit() {
-    for (int i = 0; i < coursesUnit!.length; i++) {
-      final addedLoadedUnits = coursesUnit![i] * coursesScore![i];
-      totalLoadUnit = (totalLoadUnit! + addedLoadedUnits);
-      return totalLoadUnit;
-    }
-  }
-
-  getGradePointAverage(totalLoadUnit, totalCourseUnit) {
-    double GPA = totalLoadUnit / totalCourseUnit;
-    gradePointAverage = GPA;
-    return gradePointAverage;
-  }
-
-  getCumulativeGradePointAverage(totalLoadUnit, totalCourseUnit) {
-    double CGPA = totalLoadUnit / totalCourseUnit;
-    cumulativeGradePointAverage = CGPA;
-    return cumulativeGradePointAverage;
   }
 }
 

@@ -14,13 +14,13 @@ TableRow buildTableRow(Course course) {
         TableCell(
           child: SizedBox(
             height: 50,
-            child: Text(course.courseName),
+            child: Text(course.courseName!),
           ),
         ),
         TableCell(
           child: SizedBox(
             height: 50,
-            child: Text(course.courseCode),
+            child: Text(course.courseCode!),
           ),
         ),
         TableCell(

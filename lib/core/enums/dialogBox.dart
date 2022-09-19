@@ -1,0 +1,4 @@
+enum MyDialog {
+  basicDialog,
+  courseInputDetailsDialog,
+}
